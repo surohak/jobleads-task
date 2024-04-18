@@ -1,3 +1,5 @@
+!! Please do not judge me strongly for this project because I'm a more React specialized Frontend Engineer, you can find other test projects in my Github repository !!
+
 ## Getting Started
 
 Install dependencies.
