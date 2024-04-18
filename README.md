@@ -1,29 +1,46 @@
-# jobleads-task
+## Getting Started
 
-This template should help get you started developing with Vue 3 in Vite.
+Install dependencies.
 
-## Recommended IDE Setup
+Use `20.9.0` for `node` version, and `10.1.0` for `npm` version.
+To install and manage node versions you can install [nvm](https://github.com/nvm-sh/nvm)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+`npm install`
 
-## Customize configuration
+Then, run the development server:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```npm run dev``` - for Web
 
-## Project Setup
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
-```sh
-npm install
-```
+## Project Structure
 
-### Compile and Hot-Reload for Development
+### Project folders
 
-```sh
-npm run dev
-```
+| Path          | Description                                                            |
+|---------------|------------------------------------------------------------------------|
+| `components/` | Vue abstract components folder                                         |
+| `types/`      | Global Typescript types                                                |
+| `utils/`      | Small usefull globally used utilities                                  |
+| `services/`   | Services to handle connections (Api requests, LocalStorage, Cookie...) |
+| `sections/`   | Each page section                                                      |
+| `styles/`     | Global styles                                                          |
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+## External libraries
+
+- [Vue](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Vite](https://vitejs.dev/)
+- [Vue Router](https://router.vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/)
+- [Vue Test Utils](https://vue-test-utils.vuejs.org/)
+- [Jest](https://jestjs.io/)
+
+
+## Linting
+
+This project uses [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for linting

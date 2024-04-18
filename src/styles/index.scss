@@ -1,0 +1,41 @@
+@import './mixins.scss';
+@import './vars.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  .app-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    max-width: 980px;
+  }
+}

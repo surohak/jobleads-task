@@ -1,0 +1,13 @@
+@import "./vars.scss";
+
+@mixin tablet {
+  @media only screen and (max-width: $breakpoint_tablet) {
+    @content;
+  }
+}
+
+@mixin desktopSmall {
+  @media only screen and (max-width: $breakpoint_desktop_small) {
+    @content;
+  }
+}
