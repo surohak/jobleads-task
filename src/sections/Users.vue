@@ -142,6 +142,7 @@
                 class="search-email-field"
                 single-line
                 hide-details
+                density="compact"
               ></v-text-field>
               <v-btn v-bind="props" class="add-user-btn">Add User</v-btn>
             </div>
@@ -155,7 +156,7 @@
                 {{ editedIndex === -1 ? "Add User" : "Edit User" }}
               </span>
               <v-container>
-                <v-column>
+                <v-column class="dialog-content-inputs">
                   <v-text-field
                     v-model="editedUser.name.firstname"
                     variant="outlined"
@@ -329,7 +330,7 @@
   .add-edit-dialog-content {
     padding: 8px 24px !important;
     .v-container {
-      padding: 24px 0 0 0;
+      padding: 0;
     }
   }
   .v-card-actions {
@@ -360,16 +361,13 @@
     display: flex;
     justify-content: flex-end;
     gap: 16px;
-  }
-  .search-email-field {
-    display: inline-block;
-    max-width: 300px;
-    height: 32px;
-    :global(.v-input__control),
-    :global(.v-field__field),
-    :global(input) {
-      height: 32px;
-      min-height: 32px !important;
+    .search-email-field {
+      max-width: 300px;
     }
+  }
+  .dialog-content-inputs {
+    display: grid;
+    gap: 24px;
+    padding: 24px 0;
   }
 </style>
