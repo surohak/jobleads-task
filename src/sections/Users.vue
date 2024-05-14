@@ -16,7 +16,7 @@
     align: "center",
   };
 
-  const defaultUser = {
+  const getDefaultUser = () => ({
     id: -1,
     name: {
       firstname: "",
@@ -24,14 +24,14 @@
     },
     email: "",
     phone: "",
-  };
+  });
 
   const data = ref<IUser[]>([]);
   const filteredData = ref<IUser[]>([]);
   const loading = ref(true);
   const dialog = ref(false);
   const dialogDelete = ref(false);
-  const editedUser = ref<IUser>(defaultUser);
+  const editedUser = ref<IUser>(getDefaultUser());
   const editedIndex = ref(-1);
   const dialogBtnLoading = ref(false);
   const searchByEmail = ref("");
@@ -42,6 +42,19 @@
 
   const save = async () => {
     dialogBtnLoading.value = true;
+
+    const editedUserValue = editedUser.value;
+
+    if (
+      !editedUserValue.email ||
+      !editedUserValue.name.firstname ||
+      !editedUserValue.name.lastname ||
+      !editedUserValue.phone
+    ) {
+      alert("Please fill all fields");
+      dialogBtnLoading.value = false;
+      return;
+    }
 
     if (editedIndex.value > -1) {
       const res = await Api.updateUser(editedUser.value, {
@@ -103,10 +116,12 @@
   };
 
   watch(dialog, () => {
-    !dialog.value && setEditedUser(defaultUser);
+    if (!dialog.value) {
+      setEditedUser(getDefaultUser());
+    }
   });
   watch(dialogDelete, () => {
-    !dialogDelete.value && setEditedUser(defaultUser);
+    !dialogDelete.value && setEditedUser(getDefaultUser());
   });
   watch(searchByEmail, () => {
     filteredData.value = data.value.filter((user) =>
